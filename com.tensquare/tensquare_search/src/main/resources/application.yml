@@ -1,0 +1,17 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: tensquare-search
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/tensquare_gathering?characterEncoding=UTF8
+    username: root
+    password: 123456
+  jpa:
+    database: MySQL
+    show-sql: true
+  data:
+   elasticsearch:
+     cluster-nodes: 127.0.0.1:9300
