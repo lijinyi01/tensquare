@@ -42,12 +42,16 @@ public class UserController {
 
     @Autowired
     private JwtUtil jwtUtil;
+    @RequestMapping("jinyi")
+    public String J(){
+    	return "HAHA";
+	}
 
     @RequestMapping(value = "/{userid}/{friendid}/{x}",method = RequestMethod.PUT)
     public  void updatefanscountandfollowcount(@PathVariable String userid,@PathVariable String friendid,@PathVariable int x){
-		System.out.println(userid);
-		System.out.println(friendid);
-		System.out.println("x"+x);
+	//	System.out.println(userid);
+	//	System.out.println(friendid);
+	//	System.out.println("x"+x);
 		userService.updatefanscountandfollowcount(userid,friendid,x);
 	}
 
@@ -67,17 +71,24 @@ public class UserController {
 	@RequestMapping(value = "/sendsms/{mobile}",method = RequestMethod.POST)
 	public Result sendSms(@PathVariable String mobile){
 		userService.sendSms(mobile);
-		return new Result(true,StatusCode.OK,"fasonghenggong");
+		String random = (String)redisTemplate.opsForValue().get("random_" + mobile);
+		Map<String, String> map = new HashMap<>();
+		map.put("mobile", mobile);
+		map.put("random", random);
+		return new Result(true,StatusCode.OK,"成功",map);
 	}
 
     @RequestMapping(value = "/register/{code}",method = RequestMethod.POST)
 	public Result regist(@PathVariable String code,@RequestBody User user){
-       String checkRedis = (String)redisTemplate.opsForValue().get("random_" + user.getMobile());
+       String checkRedis = (String) redisTemplate.opsForValue().get("random_" + user.getMobile());
+		System.out.println(checkRedis);
        if(checkRedis.isEmpty()){
            return new Result(false,StatusCode.ERROR,"请先获取手机验证码");
        }
         if(!checkRedis.equals(code)){
-            return new Result(false,StatusCode.ERROR,"请输入正确验证码");
+
+
+        	return new Result(false,StatusCode.ERROR,"请输入正确验证码");
         }
         userService.add(user);
         return new Result(true,StatusCode.OK,"注册成功 ");

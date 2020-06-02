@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Customer2 {
 
    @RabbitHandler
-   public void GetMsg(String msg){
+  public void GetMsg(String msg){
        System.out.println("itheima"+msg);
-   }
+ }
 }

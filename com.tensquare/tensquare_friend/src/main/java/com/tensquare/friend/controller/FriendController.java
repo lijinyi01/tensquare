@@ -29,15 +29,15 @@ public class FriendController {
     public Result addFriend(@PathVariable String friendid,@PathVariable String type){
         //验证是否登录 和当前用户id
         Claims claims = (Claims) request.getAttribute("claims_user");
-        System.out.println(claims);
-        System.out.println(friendid);
-        System.out.println(type);
+      //  System.out.println(claims);
+      // System.out.println(friendid);
+      //  System.out.println(type);
         if(claims==null){
 
          return  new Result(false,StatusCode.LOGINERROR,"权限不足");
         }
         String userid = claims.getId();
-        System.out.println(userid);
+       // System.out.println(userid);
         if(type!=null){
             if(type.equals("1")){
                 //   添加好友
@@ -47,15 +47,15 @@ public class FriendController {
               }
                if(flag==1){
                    userClient.updatefanscountandfollowcount(userid,friendid,1);
-                   return new Result(false, StatusCode.ERROR,"添加成功");
+                   return new Result(true, StatusCode.OK,"添加成功");
                 }
 
             }else if(type.equals("2")){
                 System.out.println("controller"+type);
                // 添加非好友
                int flag= friendService.addNoFriend(userid,friendid);
-                System.out.println(flag+"HAHAHAHA");
-                System.out.println(flag+"flag");
+             //   System.out.println(flag+"HAHAHAHA");
+              //  System.out.println(flag+"flag");
                 if(flag==0){
                     return new Result(false, StatusCode.ERROR,"不能重复添加非好友");
                 }
@@ -74,8 +74,8 @@ public class FriendController {
     public Result deleteFriend(@PathVariable String friendid){
 
         Claims claims = (Claims) request.getAttribute("claims_user");
-        System.out.println(claims);
-        System.out.println(friendid);
+      //  System.out.println(claims);
+      //  System.out.println(friendid);
        // System.out.println(type);
         if(claims==null){
 

@@ -41,6 +41,7 @@ public class RecruitService {
 
 
 	 public  List<Recruit> recommend(){
+
 	 	return recruitDao.findTop6ByStateOrderByCreatetimeDesc("2");
 	 }
 	 public List<Recruit>  newlist(){

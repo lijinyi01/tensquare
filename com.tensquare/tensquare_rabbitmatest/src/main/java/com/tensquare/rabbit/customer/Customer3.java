@@ -10,6 +10,5 @@ public class Customer3 {
 
    @RabbitHandler
    public void GetMsg(String msg){
-       System.out.println("kudingyu"+msg);
-   }
+       System.out.println("kudingyu"+msg); }
 }

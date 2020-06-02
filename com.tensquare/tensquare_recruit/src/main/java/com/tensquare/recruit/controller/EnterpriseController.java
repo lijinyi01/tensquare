@@ -30,7 +30,7 @@ public class EnterpriseController {
 	@Autowired
 	private EnterpriseService enterpriseService;
 
-	@RequestMapping(value="/search/hotlist")
+	@RequestMapping(value="/search/{hotlist}")
 	public  Result hotlist(){
 		List<Enterprise> list =enterpriseService.hostList("1");
 		return new Result(true, StatusCode.OK,"查询成功",list);

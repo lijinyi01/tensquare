@@ -71,6 +71,8 @@ public class SpitService {
          Pageable pageable= PageRequest.of(page-1,size);
 
          return  spitDao.findByParentid(parentid,pageable);
+
+
      }
 
      public void thumbup(String  spitId){

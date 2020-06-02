@@ -19,7 +19,8 @@ public class QaApplication {
 	}
 
 	@Bean
-	public IdWorker idWorkker(){
+	public IdWorker idWorkker()
+	{
 		return new IdWorker(1, 1);
 	}
 

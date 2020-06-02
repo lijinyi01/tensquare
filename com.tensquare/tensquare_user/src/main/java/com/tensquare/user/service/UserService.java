@@ -38,6 +38,7 @@ import util.JwtUtil;
  *
  */
 @Service
+@SuppressWarnings("unchecked")
 public class UserService {
 
 	@Autowired
@@ -233,7 +234,7 @@ public class UserService {
 		Map<String, String> map = new HashMap<>();
 		map.put("mobile", mobile);
 		map.put("random", random);
-		// rabbitTemplate.convertAndSend("sms",map);
+		 rabbitTemplate.convertAndSend("sms",map);
 		System.out.println(random);
 		System.out.println(map);
 
@@ -247,7 +248,7 @@ public class UserService {
 		}
 		return null;
 	}
-@Transactional
+   @Transactional
     public void updatefanscountandfollowcount(String userid, String friendid,int x) {
 	//System.out.println("userservice"+userid+"userid");
 	//System.out.println("userservice"+friendid+"friendid");

@@ -17,17 +17,20 @@ public class ProductTest {
 
     @Test
     public void sendMsg(){
-        rabbitTemplate.convertAndSend("itcast","zhijiemoshies");
+
+        rabbitTemplate.convertAndSend("itcast","直接模式1");
     }
 
     @Test
     public void sendMsg1(){
-        rabbitTemplate.convertAndSend("chuanzhi","","fenleimoshi");
+
+        rabbitTemplate.convertAndSend("chuanzhi","","分裂模式");
     }
 
     @Test
     public void sendMsg2(){
-        rabbitTemplate.convertAndSend("topic84","good.log","111haha");
+
+        rabbitTemplate.convertAndSend("topic84","good.log","主题模式");
     }
 
     @Test

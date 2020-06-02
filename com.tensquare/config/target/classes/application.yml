@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://gitee.com/lijinyi01/tensquare011.git
   rabbitmq:
-    host: 192.168.217.130
+    host: 192.168.178.221
     post: 5672
     username: guest
     password: guest

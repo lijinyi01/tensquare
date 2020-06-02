@@ -30,6 +30,7 @@ public class SpitController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Result findAll(){
+        //System.out.println("hh");
 
         return new Result(true, StatusCode.OK,"查询成功",spitService.findAll());
     }
@@ -67,15 +68,14 @@ public class SpitController {
 
     @RequestMapping(value = "/thumbup/{spitId}",method = RequestMethod.PUT)
     public  Result thumbup(@PathVariable  String spitId){
-        String userid="111";
-       if(redisTemplate.opsForValue().get("thumbup_"+userid)!=null){
+       // String userid="111";
+       if(redisTemplate.opsForValue().get("thumbup_"+spitId)!=null){
             return  new Result(false,StatusCode.REPERROR,"不能重复点赞");
         }
 
         spitService.thumbup(spitId);
-       redisTemplate.opsForValue().set("thumbup_"+userid,1);
-       return new Result(true,StatusCode.OK,"点赞成功");
-
+        redisTemplate.opsForValue().set("thumbup_"+spitId,1);
+        return  new Result(true,StatusCode.OK,"点赞成功");
 
     }
 

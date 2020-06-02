@@ -1,6 +1,6 @@
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\dao\LabelDao.java
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\BaseApplication.java
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\controller\BaseExceptionHandler.java
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\controller\LabelController.java
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\service\LabelService.java
-D:\ititjava\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\entities\Label.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\service\LabelService.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\dao\LabelDao.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\controller\BaseExceptionHandler.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\controller\LabelController.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\BaseApplication.java
+D:\it\workspace\com.tensquare\tensquare_base\src\main\java\com\tensquare\base\entities\Label.java

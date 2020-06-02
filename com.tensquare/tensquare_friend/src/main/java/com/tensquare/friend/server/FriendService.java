@@ -30,8 +30,8 @@ public class FriendService {
         friend.setUserid(userid);
         friend.setFriendid(friendid);
         friend.setIslike("0");
-        System.out.println(userid+"userid");
-        System.out.println(friendid+"friend");
+      //  System.out.println(userid+"userid");
+       // System.out.println(friendid+"friend");
         friendDao.save(friend);
         //friend-useid有数据把type都改1
 
@@ -54,8 +54,8 @@ public class FriendService {
         nofriend.setFriendid(friendid);
       noFriendDao.save(nofriend);
       //  System.out.println(save+"SAVE");
-        System.out.println(userid+"service");
-        System.out.println(friendid+"service");
+     //  System.out.println(userid+"service");
+       // System.out.println(friendid+"service");
         return 1;
 
     }

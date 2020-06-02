@@ -99,7 +99,7 @@ public class ArticleService {
 
 		if(article==null){
 		article=articleDao.findById(id).get();
-		redisTemplate.opsForValue().set("article_" + id,article,100, TimeUnit.SECONDS);
+		redisTemplate.opsForValue().set("article_" + id,article,30, TimeUnit.SECONDS);
 		}
 		return article;
 }
